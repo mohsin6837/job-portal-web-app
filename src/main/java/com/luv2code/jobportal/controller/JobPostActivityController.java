@@ -5,7 +5,6 @@ import com.luv2code.jobportal.services.JobPostActivityService;
 import com.luv2code.jobportal.services.JobSeekerApplyService;
 import com.luv2code.jobportal.services.JobSeekerSaveService;
 import com.luv2code.jobportal.services.UsersService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -32,7 +31,6 @@ public class JobPostActivityController {
     private final JobSeekerApplyService jobSeekerApplyService;
     private final JobSeekerSaveService jobSeekerSaveService;
 
-    @Autowired
     public JobPostActivityController(UsersService usersService, JobPostActivityService jobPostActivityService, JobSeekerApplyService jobSeekerApplyService, JobSeekerSaveService jobSeekerSaveService) {
         this.usersService = usersService;
         this.jobPostActivityService = jobPostActivityService;
@@ -247,7 +245,7 @@ public class JobPostActivityController {
         }
         jobPostActivity.setPostedDate(new Date());
         model.addAttribute("jobPostActivity", jobPostActivity);
-        JobPostActivity saved = jobPostActivityService.addNew(jobPostActivity);
+        jobPostActivityService.addNew(jobPostActivity);
         return "redirect:/dashboard/";
     }
 

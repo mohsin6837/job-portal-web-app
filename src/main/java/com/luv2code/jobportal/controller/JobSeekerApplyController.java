@@ -2,7 +2,6 @@ package com.luv2code.jobportal.controller;
 
 import com.luv2code.jobportal.entity.*;
 import com.luv2code.jobportal.services.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,7 +27,6 @@ public class JobSeekerApplyController {
     private final JobSeekerProfileService jobSeekerProfileService;
 
 
-    @Autowired
     public JobSeekerApplyController(JobPostActivityService jobPostActivityService, UsersService usersService, JobSeekerApplyService jobSeekerApplyService, JobSeekerSaveService jobSeekerSaveService, RecruiterProfileService recruiterProfileService, JobSeekerProfileService jobSeekerProfileService) {
         this.jobPostActivityService = jobPostActivityService;
         this.usersService = usersService;

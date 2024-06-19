@@ -6,7 +6,6 @@ import com.luv2code.jobportal.entity.Users;
 import com.luv2code.jobportal.repository.JobSeekerProfileRepository;
 import com.luv2code.jobportal.repository.RecruiterProfileRepository;
 import com.luv2code.jobportal.repository.UsersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -25,7 +24,6 @@ public class UsersService {
     private final RecruiterProfileRepository recruiterProfileRepository;
     private final PasswordEncoder passwordEncoder;
 
-    @Autowired
     public UsersService(UsersRepository usersRepository, JobSeekerProfileRepository jobSeekerProfileRepository, RecruiterProfileRepository recruiterProfileRepository, PasswordEncoder passwordEncoder) {
         this.usersRepository = usersRepository;
         this.jobSeekerProfileRepository = jobSeekerProfileRepository;

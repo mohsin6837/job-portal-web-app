@@ -7,7 +7,6 @@ import com.luv2code.jobportal.repository.UsersRepository;
 import com.luv2code.jobportal.services.JobSeekerProfileService;
 import com.luv2code.jobportal.util.FileDownloadUtil;
 import com.luv2code.jobportal.util.FileUploadUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -37,7 +36,6 @@ public class JobSeekerProfileController {
 
     private UsersRepository usersRepository;
 
-    @Autowired
     public JobSeekerProfileController(JobSeekerProfileService jobSeekerProfileService, UsersRepository usersRepository) {
         this.jobSeekerProfileService = jobSeekerProfileService;
         this.usersRepository = usersRepository;
@@ -101,7 +99,7 @@ public class JobSeekerProfileController {
             jobSeekerProfile.setResume(resumeName);
         }
 
-        JobSeekerProfile seekerProfile = jobSeekerProfileService.addNew(jobSeekerProfile);
+        jobSeekerProfileService.addNew(jobSeekerProfile);
 
         try {
             String uploadDir = "photos/candidate/" + jobSeekerProfile.getUserAccountId();

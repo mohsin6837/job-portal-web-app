@@ -7,8 +7,6 @@ import com.luv2code.jobportal.services.UsersTypeService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -25,7 +23,6 @@ public class UsersController {
     private final UsersTypeService usersTypeService;
     private final UsersService usersService;
 
-    @Autowired
     public UsersController(UsersTypeService usersTypeService, UsersService usersService) {
         this.usersTypeService = usersTypeService;
         this.usersService = usersService;
