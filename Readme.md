@@ -21,5 +21,5 @@ Follow these instructions to get a copy of the project up and running on your lo
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/job-portal.git
+git clone https://github.com/mohsin6837/job-portal-web-app
 cd job-portal
